@@ -34,3 +34,9 @@ bayer[:, 1::2] = (img[:, 1::3] << 4) + (img[:, 2::3] >> 4)
     
 # plt.figure()
 # plt.imshow(np.stack((red_img, green_img, blue_img), axis=-1) / 2000)
+
+green1 = bayer[::2, 1::2]
+green2 = bayer[1::2, ::2]
+
+plt.figure()
+plt.imshow(green1 - green2)
